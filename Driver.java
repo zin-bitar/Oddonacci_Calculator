@@ -5,6 +5,7 @@ public class Driver {
 
         File oddText = new File("OddoOut.txt");
         PrintWriter oddWriter;
+        File timing = new File("Timing.txt");
         try {
             oddWriter = new PrintWriter(new FileOutputStream(oddText));
 
