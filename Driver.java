@@ -10,12 +10,15 @@ public class Driver {
         try {
             oddWriter = new PrintWriter(new FileOutputStream(oddText));
             timingWriter = new PrintWriter(new FileOutputStream(timingText));
+            timingWriter.print("For the linear model we can see that there are very differences in the runtimes. The first one is larger because " +
+                    "of the warm-up behavior of the JVM. \nThe differences are also due to system noise and overhead.\n\nWe can still see that the linear model is way faster than the exponential one.\n\n" +
+                    "I will not be running this code at n=200, since my computer is not a quantum computer.\n\n");
 
             int k = 0;
             for (int i = 0; i < 5; i++) {
                 k +=5;
                 long time = System.nanoTime();
-                int[] linear = GoodOdd(k);
+                long[] linear = GoodOdd(k);
                 long timeDifference = System.nanoTime()-time;
                 oddWriter.print("Linear for " + k + ": " + linear[0] + "\n");
                 timingWriter.print("linear " + k+" took: " + timeDifference + " nanoseconds\n" );
@@ -32,6 +35,8 @@ public class Driver {
                 timingWriter.print("ternary " + k+" took: " + (System.nanoTime()-time2) + " nanoseconds\n");
             }
 
+
+
             timingWriter.close();
             oddWriter.close();
 
@@ -41,23 +46,23 @@ public class Driver {
         }
     }
     //Ternary oddonacci
-    static int BadOdd(int n){
+    static long BadOdd(int n){
         if(n<= 3) return 1;
         else{
             return BadOdd(n-1)+BadOdd(n-2)+BadOdd(n-3);
         }
     }
     //Linear oddonacci
-    static int[] GoodOdd(int n){
-        if(n==3) return new int[]{1,1,1};
-        if(n==2) return new int[]{1,1,0};
-        if(n==1) return new int[]{1,0,0};
+    static long[] GoodOdd(int n){
+        if(n==3) return new long[]{1,1,1};
+        if(n==2) return new long[]{1,1,0};
+        if(n==1) return new long[]{1,0,0};
         else{
-            int[] arr = GoodOdd(n-1);
-            int a = arr[0];
-            int b = arr[1];
-            int c = arr[2];
-            return new int[]{a+b+c,a,b};
+            long[] arr = GoodOdd(n-1);
+            long a = arr[0];
+            long b = arr[1];
+            long c = arr[2];
+            return new long[]{a+b+c,a,b};
         }
     }
 }
