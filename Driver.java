@@ -10,7 +10,7 @@ public class Driver {
         try {
             oddWriter = new PrintWriter(new FileOutputStream(oddText));
             timingWriter = new PrintWriter(new FileOutputStream(timingText));
-            timingWriter.print("For the linear model we can see that there are very differences in the runtimes. The first one is larger because " +
+            timingWriter.print("For the linear model we can see that there are very big differences in the runtimes. The first one is larger because " +
                     "of the warm-up behavior of the JVM. \nThe differences are also due to system noise and overhead.\n\nWe can still see that the linear model is way faster than the exponential one.\n\n" +
                     "I will not be running this code at n=200, since my computer is not a quantum computer.\n\n");
 
