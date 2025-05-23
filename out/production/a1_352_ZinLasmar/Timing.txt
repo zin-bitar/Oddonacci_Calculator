@@ -1,0 +1,36 @@
+For the linear model we can see that there are very small differences in the runtimes. The first one is larger because of the warm-up behavior of the JVM. 
+The differences are also due to system noise and overhead.
+
+We can still see that the linear model is way faster than the exponential one.
+
+I will not be running this code at n=200, since my computer is not a quantum computer.
+
+linear 5 took: 3900 nanoseconds
+linear 10 took: 3600 nanoseconds
+linear 15 took: 3600 nanoseconds
+linear 20 took: 4400 nanoseconds
+linear 25 took: 5800 nanoseconds
+linear 30 took: 6300 nanoseconds
+linear 35 took: 7500 nanoseconds
+linear 40 took: 9200 nanoseconds
+linear 45 took: 8700 nanoseconds
+linear 50 took: 9700 nanoseconds
+linear 55 took: 12300 nanoseconds
+linear 60 took: 11400 nanoseconds
+linear 65 took: 18900 nanoseconds
+linear 70 took: 7600 nanoseconds
+linear 75 took: 27200 nanoseconds
+linear 80 took: 9800 nanoseconds
+linear 85 took: 9200 nanoseconds
+linear 90 took: 10600 nanoseconds
+linear 95 took: 11100 nanoseconds
+linear 100 took: 10500 nanoseconds
+
+ternary 5 took: 211400 nanoseconds
+ternary 10 took: 19300 nanoseconds
+ternary 15 took: 212900 nanoseconds
+ternary 20 took: 558200 nanoseconds
+ternary 25 took: 3957300 nanoseconds
+ternary 30 took: 47450600 nanoseconds
+ternary 35 took: 994749800 nanoseconds
+ternary 40 took: 18507592400 nanoseconds

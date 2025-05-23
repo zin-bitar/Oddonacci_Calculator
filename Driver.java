@@ -15,24 +15,28 @@ public class Driver {
                     "I will not be running this code at n=200, since my computer is not a quantum computer.\n\n");
 
             int k = 0;
-            for (int i = 0; i < 5; i++) {
+            for (int i = 0; i < 40; i++) {
                 k +=5;
                 long time = System.nanoTime();
                 long[] linear = GoodOdd(k);
                 long timeDifference = System.nanoTime()-time;
                 oddWriter.print("Linear for " + k + ": " + linear[0] + "\n");
                 timingWriter.print("linear " + k+" took: " + timeDifference + " nanoseconds\n" );
+                oddWriter.flush();
+                timingWriter.flush();
             }
 
             oddWriter.print("\n");
             timingWriter.print("\n");
 
             k = 0;
-            for (int i = 0; i < 5; i++) {
+            for (int i = 0; i < 40; i++) {
                 k +=5;
                 long time2 = System.nanoTime();
                 oddWriter.print("Ternary for " + k + ": " + BadOdd(k) + "\n");
                 timingWriter.print("ternary " + k+" took: " + (System.nanoTime()-time2) + " nanoseconds\n");
+                oddWriter.flush();
+                timingWriter.flush();
             }
 
 
@@ -64,5 +68,15 @@ public class Driver {
             long c = arr[2];
             return new long[]{a+b+c,a,b};
         }
+    }
+
+    //Implementation of the tail-recursive linear method
+    static long oddonacciHelper(int n, long a, long b, long c) {
+        if (n == 0) return c;
+        return oddonacciHelper(n-1, b, c, a+b+c);
+    }
+    static long oddonacciTailRecursive(int n) {
+        if (n <= 3) return 1;
+        return oddonacciHelper(n-3, 1, 1, 1);
     }
 }

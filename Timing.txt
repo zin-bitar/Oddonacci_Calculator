@@ -1,0 +1,56 @@
+For the linear model we can see that there are very small differences in the runtimes. The first one is larger because of the warm-up behavior of the JVM. 
+The differences are also due to system noise and overhead.
+
+We can still see that the linear model is way faster than the exponential one.
+
+I will not be running this code at n=200, since my computer is not a quantum computer.
+
+linear 5 took: 2700 nanoseconds
+linear 10 took: 2300 nanoseconds
+linear 15 took: 5300 nanoseconds
+linear 20 took: 2300 nanoseconds
+linear 25 took: 3100 nanoseconds
+linear 30 took: 3300 nanoseconds
+linear 35 took: 3900 nanoseconds
+linear 40 took: 4900 nanoseconds
+linear 45 took: 5100 nanoseconds
+linear 50 took: 5000 nanoseconds
+linear 55 took: 10200 nanoseconds
+linear 60 took: 5800 nanoseconds
+linear 65 took: 28300 nanoseconds
+linear 70 took: 7400 nanoseconds
+linear 75 took: 9300 nanoseconds
+linear 80 took: 9900 nanoseconds
+linear 85 took: 1800 nanoseconds
+linear 90 took: 2100 nanoseconds
+linear 95 took: 2300 nanoseconds
+linear 100 took: 2300 nanoseconds
+linear 105 took: 2500 nanoseconds
+linear 110 took: 2400 nanoseconds
+linear 115 took: 2500 nanoseconds
+linear 120 took: 9100 nanoseconds
+linear 125 took: 4000 nanoseconds
+linear 130 took: 2800 nanoseconds
+linear 135 took: 3400 nanoseconds
+linear 140 took: 3100 nanoseconds
+linear 145 took: 3300 nanoseconds
+linear 150 took: 8200 nanoseconds
+linear 155 took: 4400 nanoseconds
+linear 160 took: 5600 nanoseconds
+linear 165 took: 4900 nanoseconds
+linear 170 took: 5100 nanoseconds
+linear 175 took: 10400 nanoseconds
+linear 180 took: 4000 nanoseconds
+linear 185 took: 4100 nanoseconds
+linear 190 took: 5400 nanoseconds
+linear 195 took: 4300 nanoseconds
+linear 200 took: 4400 nanoseconds
+
+ternary 5 took: 205400 nanoseconds
+ternary 10 took: 17600 nanoseconds
+ternary 15 took: 118100 nanoseconds
+ternary 20 took: 632300 nanoseconds
+ternary 25 took: 2413000 nanoseconds
+ternary 30 took: 51094200 nanoseconds
+ternary 35 took: 1055522500 nanoseconds
+ternary 40 took: 17381985400 nanoseconds
